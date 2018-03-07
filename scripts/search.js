@@ -1,6 +1,6 @@
 // Funktion för att produkterna ska inte laddas för snabbt.
 
-var delay = (function (){  
+var delay = (function (){
     var timer = 0;
     return function (callback, ms){
         clearTimeout (timer);
@@ -19,7 +19,7 @@ $(document).ready(function(){
             }
 // Hämtar produkterna och valet och visar allt på en lista.
             else {
-                var movieAPI = $.getJSON('http://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=' + searchField,
+                var movieAPI = $.getJSON('https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=' + searchField,
                     function(data) {
                         $.each(data, function(key, value){
                             if (value.name.search() != -1)
@@ -44,7 +44,7 @@ $(document).ready(function(){
 
         }, 200);
  // Tömmer listan
-        $('#list').html(''); 
+        $('#list').html('');
 
 
     });

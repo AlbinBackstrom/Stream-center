@@ -14,8 +14,8 @@ var productId = getParameterByName("productId"); // Sparar query string
 console.log(productId);
 $(document).ready(function () {
 
-    var productsURL = "http://medieinstitutet-wie-products.azurewebsites.net/api/products";
-    var categoryUrl = "http://medieinstitutet-wie-products.azurewebsites.net/api/categories";
+    var productsURL = "https://medieinstitutet-wie-products.azurewebsites.net/api/products";
+    var categoryUrl = "https://medieinstitutet-wie-products.azurewebsites.net/api/categories";
     var getOrders = "https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=42";
 
     var title = getParameterByName("title"); // Sparar titeln på länken
@@ -91,6 +91,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
-

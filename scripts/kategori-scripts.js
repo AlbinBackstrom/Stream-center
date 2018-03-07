@@ -251,11 +251,11 @@ $(document).ready(function () {
 
             //Ajax-anrop för att hämta ett omdb-api för extern info om filmen (länk till imdb)
             $.ajax({
-                url: "http://www.omdbapi.com/?t=" + results[i].name + "&apikey=1157ec03",
+                url: "https://www.omdbapi.com/?t=" + results[i].name + "&apikey=1157ec03",
                 method: "GET",
                 async: false,
                 success: function (omdbResult) {
-                    var imdbLink = "http://www.imdb.com/title/" + omdbResult.imdbID;
+                    var imdbLink = "https://www.imdb.com/title/" + omdbResult.imdbID;
                     $("#" + results[i].id + "_imbd").attr("href", imdbLink);
                 },
                 error: function (error) {
@@ -339,7 +339,3 @@ function getAmountOfItems() {
 }
 
 //Document ready end tag
-
-
-
-

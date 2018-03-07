@@ -9,7 +9,7 @@ function getParameterByName(name, url) { // Query strings
 }
 
 var productsURL = "https://medieinstitutet-wie-products.azurewebsites.net/api/products";
-var categoryUrl = "http://medieinstitutet-wie-products.azurewebsites.net/api/categories";
+var categoryUrl = "https://medieinstitutet-wie-products.azurewebsites.net/api/categories";
 var i, j;
 function googleTranslateElementInit() { // Implementerar google translate
 new google.translate.TranslateElement({pageLanguage: 'sv', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
@@ -41,9 +41,9 @@ productsURL = productsURL + "/" + productId; // Länken productsUrl + / + query 
      var myCategory = document.getElementById("#myCategory");
       window.open("kategori.html?id=" + result.productCategory[0].categoryId, "_self"); // Klika på category, öppna ett nytt fönster med filmens category.
   });
-   
-  $("#infoPrice").click(function(){  
-     var myPrice = document.getElementById("#priceInfo"); 
+
+  $("#infoPrice").click(function(){
+     var myPrice = document.getElementById("#priceInfo");
         window.open("info2.html?price=" + result.price, "_self") // Klika på price, öppna ett nytt fönster med filmens pris.
   });
 
@@ -65,19 +65,19 @@ productsURL = productsURL + "/" + productId; // Länken productsUrl + / + query 
   var lista = ""; // Skapar en tom variabel
    for (i = 0; i < result.productCategory.length; i++) { // loopar igenom kategorierna i loopen
       categoryIdFromMovie = result.productCategory[i].categoryId; //  Kategori från filmen är samma som produktens från APi.
-        for (j = 0; j < categoryData.length; j++) { // Skapar en till loop 
-          if (categoryIdFromMovie == categoryData[j].id) { 
+        for (j = 0; j < categoryData.length; j++) { // Skapar en till loop
+          if (categoryIdFromMovie == categoryData[j].id) {
             lista += categoryData[j].name + " "; // lägger kategorin i listan
               $(".movieCategory").text(lista); // Skriver ut kategorin.
           }
        }
     }
 
-  $.getJSON("http://www.omdbapi.com/?t=" + result.name + "&apikey=1157ec03", function(omdbResult){
-                
+  $.getJSON("https://www.omdbapi.com/?t=" + result.name + "&apikey=1157ec03", function(omdbResult){
+
                 console.log(omdbResult.imdbID);
                 var imdbLink = "http://www.imdb.com/title/" + omdbResult.imdbID;
-               $(".movieMoreInfo").attr("href", imdbLink);   
+               $(".movieMoreInfo").attr("href", imdbLink);
             })
         })
     });
