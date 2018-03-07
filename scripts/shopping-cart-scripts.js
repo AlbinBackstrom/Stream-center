@@ -109,7 +109,7 @@ $(document).ready(function () {
                                 "</div>";
                             //  document.getElementById("subTotal").innerHTML = totalPrice.toString();
 
-                            console.log("hej");
+
 
                             $("#shoppingCartItems").append(productHtml);
 
@@ -427,7 +427,3 @@ $(document).ready(function () {
 
 
 }); //Document ready end
-
-
-
-
