@@ -69,7 +69,7 @@ $(document).ready(function () {
 
                             $("#amountToPay").text(totalAmountToPay);
 
-                            console.log("id:" + result[i].id);
+
 
 
                             productHtml += "<div class='row shoppingCartDiv'>" +
@@ -134,7 +134,7 @@ $(document).ready(function () {
 
                 $(".delBtnSHoppDrop").on("click", function () {
                     var i = $(this).attr("id");
-                    console.log("idt på filmen är: " + i);
+
                     var shoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
                     for (var i = 0; i < shoppingCart.length; i++) {
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
                 });
                 // Ökar antal knapp
                 $(".increaseAmountBtn").on("click", function () {
-                    console.log("Nu ökar vi!");
+
                     var shoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
                     for (var i = 0; i < shoppingCart.length; i++) {
                         if (shoppingCart[i].id == $(this).attr("id")) {
@@ -182,7 +182,7 @@ $(document).ready(function () {
                             totalSubPrice = amount * moviePrice;
 
                             totalAmountToPay = parseInt(totalAmountToPay) + parseInt(moviePrice);
-                            console.log("totales: " + totalAmountToPay);
+
                             localStorage.setItem("totalPrice", JSON.stringify(totalAmountToPay));
 
                             $("#amountToPay").text(totalAmountToPay);
@@ -197,7 +197,7 @@ $(document).ready(function () {
                 });
                 // Minskar antal knapp
                 $(".decreaseAmountBtn").on("click", function () {
-                    console.log("Nu minskar vi!");
+
                     var shoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
 
                     for (var i = 0; i < shoppingCart.length; i++) {
@@ -224,7 +224,7 @@ $(document).ready(function () {
 
                                 totalAmountToPay = parseInt(totalAmountToPay) - parseInt(moviePrice);
 
-                                console.log(totalAmountToPay);
+
                                 $("#amountToPay").text(totalAmountToPay);
 
                                 localStorage.setItem("totalPrice", JSON.stringify(totalAmountToPay));
@@ -244,7 +244,7 @@ $(document).ready(function () {
                  *
                  */
                 $(".deleteMovieFromShoppingCart").on("click", function () {
-                        console.log("delete");
+
                         totalAmountToPay = 0;
 
                         if (confirm("Delete?") == true) {
@@ -323,7 +323,7 @@ $(document).ready(function () {
         var amount = 1;
 
         var moviePrice = $(".moviePrice").html();
-        console.log(moviePrice);
+
 
         if (localStorage.getItem("totalPrice") != null) {
 

@@ -11,7 +11,7 @@ function getParameterByName(name, url) { // QUERY STRINGS READY CODE
 
 var productId = getParameterByName("productId"); // Sparar query string
 
-console.log(productId);
+
 $(document).ready(function () {
 
     var productsURL = "https://medieinstitutet-wie-products.azurewebsites.net/api/products";
@@ -23,7 +23,7 @@ $(document).ready(function () {
     var category = getParameterByName("category"); // Sparar kategori på länken
     var price = getParameterByName("price"); // Sparar pris på länken
 
-    console.log(price);
+
 
     var results = []; // Skapar en tom vektor för att pusha in den valda produkten
 
@@ -84,7 +84,6 @@ $(document).ready(function () {
             // klickar på bilden, länkar till infosidan
             $(randomImage).css("cursor", "pointer");
             randomImage.on("click", function () {
-                console.log(this);
                 window.location.href = "info.html?productId=" + this.id;
 
             });

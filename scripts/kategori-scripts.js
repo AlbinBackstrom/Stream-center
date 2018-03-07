@@ -259,7 +259,7 @@ $(document).ready(function () {
                     $("#" + results[i].id + "_imbd").attr("href", imdbLink);
                 },
                 error: function (error) {
-                    console.log("ERROR")
+
                 }
             });
         }
@@ -271,11 +271,11 @@ $(document).ready(function () {
 //Utför snabbköpsfunktionen som sparas i local storage
 
 function addToCart() {
-    console.log("KÖP");
+
     var movieId = $(this).attr("movieid");
 
     var moviePrice = $("#productPrice").html();
-    console.log(moviePrice);
+
 
 
     if (localStorage.getItem("totalPrice") != null) {

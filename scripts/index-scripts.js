@@ -17,7 +17,6 @@ $.getJSON(randomSixURL, function (result) {
             var randomImage = $("<img>").attr("src",result[i].imageUrl).attr("id", result[i].id).addClass("styleForRandomDiv").addClass("col-md-4", "<a>");
             randomImage.appendTo($("#randomImageDiv"));
              randomImage.on("click", function() {
-            console.log(this);
             window.location.href = "info.html?productId=" + this.id;
 
         });
@@ -45,15 +44,9 @@ $.getJSON(productsURL, function (result) {
         $("img").css( 'cursor', 'pointer' );
 
         newlyAddedImage.on("click", function() {
-            console.log(this);
             window.location.href = "info.html?productId=" + this.id;
 
         });
 
     }
 });
-
-
-
-
-

@@ -75,7 +75,6 @@ productsURL = productsURL + "/" + productId; // Länken productsUrl + / + query 
 
   $.getJSON("https://www.omdbapi.com/?t=" + result.name + "&apikey=1157ec03", function(omdbResult){
 
-                console.log(omdbResult.imdbID);
                 var imdbLink = "https://www.imdb.com/title/" + omdbResult.imdbID;
                $(".movieMoreInfo").attr("href", imdbLink);
             })

@@ -13,10 +13,8 @@ $(document).ready(function () {
         document.getElementById("categorySelectList").innerHTML = populateCategoriesList(result);
 
         $("#selectListForCategories").on("change", function () {
-            console.log("hej hej");
 
             var val = $(this).val();
-            console.log("val " + val);
 
             window.location = "kategori.html?id=" + val;
 

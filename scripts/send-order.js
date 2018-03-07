@@ -11,12 +11,9 @@ $(document).ready(function () {
     $("#btnConfirmCheckout").on("click", function () {
         var shoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
 
-        console.log("btnConfirmCheckout pressed ");
-        //  console.log(shoppingCart.length);
 
 
         if (shoppingCart != null || shoppingCart.length != 0) {
-            console.log("Nu sparar vi!!!");
 
             $.ajax({
                 url: sendOrderURL,
@@ -27,8 +24,7 @@ $(document).ready(function () {
                     accept: "application/json"
                 },
                 success: function (data) {
-                    console.log("Nu är det sparat?");
-                    console.log(data);
+
 
                   //Här ska modalen visas och LS tömmas
                     localStorage.removeItem("shoppingCart");
@@ -38,8 +34,7 @@ $(document).ready(function () {
 
                 },
                 error: function (error) {
-                    console.log("Nu blev det fel!");
-                    console.log(error);
+
                 }
             }); //ajax end
         } //if end
@@ -51,7 +46,7 @@ $(document).ready(function () {
         if (orderFromLS != null) {
 
             var userEmail = $("#emailFromUser").val();
-            console.log(userEmail);
+
             var order = {
                 CompanyId: companyId,
                 CreatedBy: userEmail,
@@ -100,9 +95,9 @@ $(document).ready(function () {
 
         var shoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
 
-        console.log(shoppingCart);
+
         if (re.test(email) && (shoppingCart != null && shoppingCart.length != 0)) {
-            console.log("valid mail");
+
 
 
             $("#btnConfirmCheckout").prop("disabled", false);
@@ -110,7 +105,7 @@ $(document).ready(function () {
 
         } else {
             $("#btnConfirmCheckout").prop("disabled", true);
-            console.log("EJ valid mail");
+
         }
     });
 
